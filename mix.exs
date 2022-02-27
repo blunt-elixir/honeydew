@@ -86,8 +86,16 @@ defmodule Honeydew.MixProject do
       {:surface_formatter, "~> 0.6.0"},
 
       # blunt
-      {:blunt, "~> 0.1"},
-      {:blunt_ddd, "~> 0.1"},
+      {:blunt, github: "blunt-elixir/blunt", ref: "reorg", sparse: "apps/blunt"},
+      {:blunt_ddd, github: "blunt-elixir/blunt", ref: "reorg", sparse: "apps/blunt_ddd"},
+
+      # blunt toolkit provideds the aggregate inspector. mix view_state
+      {:blunt_toolkit,
+       github: "blunt-elixir/blunt",
+       ref: "reorg",
+       sparse: "apps/blunt_toolkit",
+       runtime: false,
+       only: :dev},
 
       # Docs
       {:ex_doc, "~> 0.28", only: :dev, runtime: false},
@@ -95,8 +103,7 @@ defmodule Honeydew.MixProject do
       # testing
       {:faker, "~> 0.17.0", only: :test},
       {:ex_machina, "~> 2.7", only: :test},
-      {:elixir_uuid, "~> 1.6", override: true, hex: :uuid_utils},
-      {:blunt_toolkit, github: "blunt-elixir/blunt_toolkit", runtime: false, only: :dev}
+      {:elixir_uuid, "~> 1.6", override: true, hex: :uuid_utils}
     ]
   end
 

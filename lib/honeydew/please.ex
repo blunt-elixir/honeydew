@@ -1,5 +1,5 @@
 defmodule Honeydew.Please do
-  use Blunt.Context
+  use Blunt.BoundedContext
 
   @moduledoc """
   The Please Context
@@ -7,16 +7,16 @@ defmodule Honeydew.Please do
   alias Honeydew.Please.Commands
   alias Honeydew.Please.Queries
 
-  command Commands.MakeList, as: :create_list
-  command Commands.DiscardList
-  command Commands.AddTask
-  command Commands.CompleteTask
-  command Commands.ThwartTask
-  command Commands.RemoveTask
-  command Commands.ReactivateTask
+  blunt_command Commands.MakeList, as: :create_list
+  blunt_command Commands.DiscardList
+  blunt_command Commands.AddTask
+  blunt_command Commands.CompleteTask
+  blunt_command Commands.ThwartTask
+  blunt_command Commands.RemoveTask
+  blunt_command Commands.ReactivateTask
 
-  query Queries.GetList
-  query Queries.ListLists
-  query Queries.ListLists, as: :list_active_lists, field_values: [status: :active]
-  query Queries.ListTasks
+  blunt_query Queries.GetList
+  blunt_query Queries.ListLists
+  blunt_query Queries.ListLists, as: :list_active_lists, field_values: [status: :active]
+  blunt_query Queries.ListTasks
 end

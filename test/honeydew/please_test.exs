@@ -5,7 +5,7 @@ defmodule Honeydew.PleaseTest do
   alias Honeydew.Please.Commands
 
   # Setup convenience factories
-  use Blunt.Testing.ExMachina
+  use Blunt.Testing.Factories
 
   # This replaces please_fixtures
   # you can call
@@ -30,7 +30,7 @@ defmodule Honeydew.PleaseTest do
     end
 
     test "list_lists/0 returns all lists" do
-      assert {:ok, _} = dispatch(:create_list)
+      assert {:ok, _} = bispatch(:create_list)
       assert_broadcast "list_made", list_id, 1000
       assert {:ok, [%{list_id: ^list_id}]} = Please.list_lists()
     end
