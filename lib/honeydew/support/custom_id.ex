@@ -19,12 +19,14 @@ defmodule Honeydew.CustomId do
 
   @behaviour Blunt.Message.Schema.FieldProvider
 
+  @type_names [:honeydew_id, __MODULE__]
+
   @impl true
   @doc """
    This callback is what allows us to register a custom field type.
    You can optionally register a validation to go along with the type.
   """
-  def ecto_field(module, {field_name, :honeydew_id, opts}) do
+  def ecto_field(module, {field_name, field_type, opts}) when field_type in @type_names do
     quote bind_quoted: [module: module, field_name: field_name, opts: opts] do
       Schema.put_field_validation(module, field_name, :honeydew_id)
       Ecto.Schema.field(field_name, :string, opts)
@@ -49,7 +51,7 @@ defmodule Honeydew.CustomId do
 
   @impl true
   # `Blunt.Testing.Factories` knows to use field providers for fake data
-  def fake(:honeydew_id, _validation, _field_config) do
+  def fake(field_type, _validation, _field_config) when field_type in @type_names do
     new()
   end
 end

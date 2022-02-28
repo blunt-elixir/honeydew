@@ -6,11 +6,11 @@ defmodule Honeydew.Please.Commands.AddTask do
   use Blunt.Command
   use Blunt.Command.EventDerivation
 
-  field :list_id, :honeydew_id
+  field :list_id, Honeydew.CustomId
   field :name, :string
   field :notes, :string
 
-  internal_field :task_id, :honeydew_id
+  internal_field :task_id, Honeydew.CustomId
 
   @impl true
   def after_validate(command) do
@@ -21,6 +21,6 @@ defmodule Honeydew.Please.Commands.AddTask do
     @moduledoc """
     Event that indicates a task was added to a list.
     """
-    field :status, :task_status, default: :active
+    field :status, Honeydew.TaskStatus, default: :active
   end
 end

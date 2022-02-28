@@ -14,6 +14,6 @@ defmodule Honeydew.Please.Commands.CompleteTask do
     Yay, the task is complete!
     """
 
-    field :status, :task_status, default: :completed
+    field :status, Honeydew.TaskStatus, default: :completed
   end
 end

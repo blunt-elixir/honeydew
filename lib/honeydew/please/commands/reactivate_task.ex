@@ -13,6 +13,6 @@ defmodule Honeydew.Please.Commands.ReactivateTask do
     @moduledoc """
     OH NO! WHYYYYYY!
     """
-    field :status, :task_status, default: :active
+    field :status, Honeydew.TaskStatus, default: :active
   end
 end

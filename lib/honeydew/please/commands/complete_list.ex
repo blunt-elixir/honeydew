@@ -13,6 +13,6 @@ defmodule Honeydew.Please.Commands.CompleteList do
     @moduledoc """
     Event that signals a list was completed.
     """
-    field :status, :list_status, default: :completed
+    field :status, Honeydew.ListStatus, default: :completed
   end
 end

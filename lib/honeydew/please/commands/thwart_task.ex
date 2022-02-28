@@ -13,6 +13,6 @@ defmodule Honeydew.Please.Commands.ThwartTask do
     @moduledoc """
     A Task was thwarted, meaning that it was not possible to complete.
     """
-    field :status, :task_status, default: :thrwarted
+    field :status, Honeydew.TaskStatus, default: :thrwarted
   end
 end

@@ -13,6 +13,6 @@ defmodule Honeydew.Please.Commands.ReactivateList do
     @moduledoc """
        Event indicating that a list has been reactivated after being discarded or completed.
     """
-    field :status, :list_status, default: :active
+    field :status, Honeydew.ListStatus, default: :active
   end
 end
