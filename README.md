@@ -10,6 +10,8 @@ The Bounded Context is in [Please](lib/honeydew/please.ex#L2)
 
 Blunt customizations are in [here](lib/honeydew/support/blunt) and the [config file](config/config.exs#L10)
 
+Custom field types are in [here](lib/honeydew/support) and the [config file](config/config.exs#L10)
+
 See the [HoneydewIdProvider](lib/honeydew/support/blunt/honeydew_id_provider.ex#L12) to see how you can define custom field types and validations
 
 See an [Aggregate Root Test](test/honeydew/please/aggregates/list_test.exs#L18)
