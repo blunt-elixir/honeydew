@@ -10,7 +10,7 @@ defmodule Honeydew.PleaseTest do
   # This replaces please_fixtures
   # you can call
   #   * build(:create_list) to create a MakeList command struct
-  #   * dispatch(:create_list) to create and dispatch a MakeList command
+  #   * bispatch(:create_list) to create and dispatch a MakeList command
   factory Commands.MakeList, as: :create_list
 
   describe "lists" do

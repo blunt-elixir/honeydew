@@ -1,4 +1,36 @@
-# Honeydew
+# Blunt Honeydew 
+
+A huge thanks to [quarterpi](quarterpi/honeydew) for allowing me to use his project to flesh out my ideas!
+
+Commands and Events are defined in [Please.Commands](lib/honeydew/please/commands).
+
+Aggregate Root state can be seen in action in the [Please.Aggregates](lib/honeydew/please/aggregates)
+
+The Bounded Context is in [Please](lib/honeydew/please.ex)
+
+Blunt customizations are in [here](lib/honeydew/support/blunt) and the [config file](config/config.exs)
+
+See the [HoneydewIdProvider](lib/honeydew/support/blunt/honeydew_id_provider.ex) to see how you can define custom field types and validations
+
+See an [Aggregate Root Test](test/honeydew/please/aggregates/list_test.exs)
+
+See some [Command Tests](test/honeydew/please/commands/make_list_test.exs)
+
+## Notes
+
+Some names are a bit funky right now. 
+    
+`blunt_command` and `blunt_query` in the please context.
+
+`bispatch` in tests.
+
+This is because I'm busy porting a large app from `cqrs_tools` to `blunt` and have some naming conflicts between the two libs.
+
+The names will be `command`, `query`, and `dispatch` on a v1
+
+
+
+# Original Honeydew README
 
 An example app built on the CELP (Commanded, Elixir, LiveView, PostgreSQL) stack.
 
