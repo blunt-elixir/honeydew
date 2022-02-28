@@ -6,8 +6,6 @@ defmodule Honeydew.Please.Commands.ReactivateTask do
   use Blunt.Command
   use Blunt.Command.EventDerivation
 
-  alias Honeydew.Please.Projections.Task
-
   field :task_id, :honeydew_id
   field :notes, :string
 
@@ -15,6 +13,6 @@ defmodule Honeydew.Please.Commands.ReactivateTask do
     @moduledoc """
     OH NO! WHYYYYYY!
     """
-    field :status, :enum, values: Task.statuses(), default: :active
+    field :status, :task_status, default: :active
   end
 end

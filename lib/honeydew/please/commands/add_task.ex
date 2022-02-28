@@ -6,8 +6,6 @@ defmodule Honeydew.Please.Commands.AddTask do
   use Blunt.Command
   use Blunt.Command.EventDerivation
 
-  alias Honeydew.Please.Projections.Task
-
   field :list_id, :honeydew_id
   field :name, :string
   field :notes, :string
@@ -23,6 +21,6 @@ defmodule Honeydew.Please.Commands.AddTask do
     @moduledoc """
     Event that indicates a task was added to a list.
     """
-    field :status, :enum, values: Task.statuses(), default: :active
+    field :status, :task_status, default: :active
   end
 end

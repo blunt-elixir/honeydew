@@ -20,5 +20,6 @@ defmodule Honeydew.Please.Commands.MakeList do
     @moduledoc """
     Event that signals a new list was made.
     """
+    field :status, :list_status, default: :active
   end
 end

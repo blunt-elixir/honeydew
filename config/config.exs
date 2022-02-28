@@ -15,7 +15,9 @@ config :blunt,
   dispatch_strategy: Blunt.DispatchStrategy.Default,
   pipeline_resolver: Honeydew.Blunt.PipelineResolver,
   schema_field_providers: [
-    Honeydew.Support.Blunt.HoneydewIdProvider
+    Honeydew.CustomId,
+    Honeydew.ListStatus,
+    Honeydew.TaskStatus
   ]
 
 config :commanded, event_store_adapter: Commanded.EventStore.Addapters.EventStore

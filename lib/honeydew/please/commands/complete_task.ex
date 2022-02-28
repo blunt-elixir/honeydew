@@ -6,8 +6,6 @@ defmodule Honeydew.Please.Commands.CompleteTask do
   use Blunt.Command
   use Blunt.Command.EventDerivation
 
-  alias Honeydew.Please.Projections.Task
-
   field :task_id, :honeydew_id
   field :notes, :string
 
@@ -16,6 +14,6 @@ defmodule Honeydew.Please.Commands.CompleteTask do
     Yay, the task is complete!
     """
 
-    field :status, :enum, values: Task.statuses(), default: :completed
+    field :status, :task_status, default: :completed
   end
 end

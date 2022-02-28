@@ -5,7 +5,6 @@ defmodule Honeydew.Please.Commands.RemoveTask do
 
   use Blunt.Command
   use Blunt.Command.EventDerivation
-  alias Honeydew.Please.Projections.Task
 
   field :task_id, :honeydew_id
   field :notes, :string
@@ -15,6 +14,6 @@ defmodule Honeydew.Please.Commands.RemoveTask do
     Thankfully, the task was removed.
     """
 
-    field :status, :enum, values: Task.statuses(), default: :removed
+    field :status, :task_status, default: :removed
   end
 end

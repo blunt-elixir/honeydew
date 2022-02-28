@@ -13,5 +13,6 @@ defmodule Honeydew.Please.Commands.DiscardList do
     @moduledoc """
     Event that signals a list was discarded.
     """
+    field :status, :list_status, default: :discarded
   end
 end

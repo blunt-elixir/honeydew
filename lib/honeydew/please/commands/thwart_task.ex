@@ -6,8 +6,6 @@ defmodule Honeydew.Please.Commands.ThwartTask do
   use Blunt.Command
   use Blunt.Command.EventDerivation
 
-  alias Honeydew.Please.Projections.Task
-
   field :task_id, :honeydew_id
   field :notes, :string
 
@@ -15,6 +13,6 @@ defmodule Honeydew.Please.Commands.ThwartTask do
     @moduledoc """
     A Task was thwarted, meaning that it was not possible to complete.
     """
-    field :status, :enum, values: Task.statuses(), default: :thrwarted
+    field :status, :task_status, default: :thrwarted
   end
 end
