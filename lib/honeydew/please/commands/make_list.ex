@@ -9,7 +9,7 @@ defmodule Honeydew.Please.Commands.MakeList do
   field :notes, :string
   field :name, :string
 
-  internal_field :list_id, :string
+  internal_field :list_id, :honeydew_id
 
   @impl true
   def after_validate(command) do

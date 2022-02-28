@@ -6,7 +6,7 @@ defmodule Honeydew.Please.Commands.ReactivateList do
   use Blunt.Command
   use Blunt.Command.EventDerivation
 
-  field :list_id, :string
+  field :list_id, :honeydew_id
   field :notes, :string
 
   derive_event Honeydew.Please.Events.ListReactivated do

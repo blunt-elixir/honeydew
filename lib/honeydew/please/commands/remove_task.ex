@@ -7,7 +7,7 @@ defmodule Honeydew.Please.Commands.RemoveTask do
   use Blunt.Command.EventDerivation
   alias Honeydew.Please.Projections.Task
 
-  field :task_id, :string
+  field :task_id, :honeydew_id
   field :notes, :string
 
   derive_event Honeydew.Please.Events.TaskRemoved do

@@ -8,15 +8,14 @@ defmodule Honeydew.Please.Commands.AddTask do
 
   alias Honeydew.Please.Projections.Task
 
-  field :list_id, :string
+  field :list_id, :honeydew_id
   field :name, :string
   field :notes, :string
 
-  internal_field :task_id, :string
+  internal_field :task_id, :honeydew_id
 
   @impl true
   def after_validate(command) do
-    IO.puts("lkssdsdds")
     %{command | task_id: Honeydew.CustomId.new()}
   end
 

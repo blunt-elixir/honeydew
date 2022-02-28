@@ -8,7 +8,7 @@ defmodule Honeydew.Please.Commands.ThwartTask do
 
   alias Honeydew.Please.Projections.Task
 
-  field :task_id, :string
+  field :task_id, :honeydew_id
   field :notes, :string
 
   derive_event Honeydew.Please.Events.TaskThwarted do

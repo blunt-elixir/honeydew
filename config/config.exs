@@ -13,7 +13,10 @@ config :blunt,
   dispatch_return: :response,
   create_jason_encoders: true,
   dispatch_strategy: Blunt.DispatchStrategy.Default,
-  pipeline_resolver: Honeydew.Blunt.PipelineResolver
+  pipeline_resolver: Honeydew.Blunt.PipelineResolver,
+  schema_field_providers: [
+    Honeydew.Support.Blunt.HoneydewIdProvider
+  ]
 
 config :commanded, event_store_adapter: Commanded.EventStore.Addapters.EventStore
 
