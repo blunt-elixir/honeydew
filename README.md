@@ -1,20 +1,20 @@
 # Blunt Honeydew 
 
-A huge thanks to [quarterpi](quarterpi/honeydew) for allowing me to use his project to flesh out my ideas!
+A huge thanks to [quarterpi](https://github.com/quarterpi/honeydew) for allowing me to use his project to flesh out my ideas!
 
 Commands and Events are defined in [Please.Commands](lib/honeydew/please/commands).
 
 Aggregate Root state can be seen in action in the [Please.Aggregates](lib/honeydew/please/aggregates)
 
-The Bounded Context is in [Please](lib/honeydew/please.ex)
+The Bounded Context is in [Please](lib/honeydew/please.ex#L2)
 
-Blunt customizations are in [here](lib/honeydew/support/blunt) and the [config file](config/config.exs)
+Blunt customizations are in [here](lib/honeydew/support/blunt) and the [config file](config/config.exs#L10)
 
-See the [HoneydewIdProvider](lib/honeydew/support/blunt/honeydew_id_provider.ex) to see how you can define custom field types and validations
+See the [HoneydewIdProvider](lib/honeydew/support/blunt/honeydew_id_provider.ex#L12) to see how you can define custom field types and validations
 
-See an [Aggregate Root Test](test/honeydew/please/aggregates/list_test.exs)
+See an [Aggregate Root Test](test/honeydew/please/aggregates/list_test.exs#L18)
 
-See some [Command Tests](test/honeydew/please/commands/make_list_test.exs)
+See some [Command Tests](test/honeydew/please/commands/make_list_test.exs#L8)
 
 ## Notes
 
